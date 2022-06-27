@@ -3,7 +3,7 @@
 
 
 function update_models() {
-    backprop_over_points(f);
+    current_error = backprop_over_points(f);
 }
 
 function plot_models() {
@@ -16,7 +16,7 @@ function plot_models() {
 }
 
 function load_new_data() {
-    data = new_data(10);
+    data = new_data(Math.floor(Math.random() * 8) +1 );
 }
 
 function clean_f() {
@@ -25,8 +25,6 @@ function clean_f() {
 
 function reset_f() {
     f = new_net(random_network_structure());
-    f.color = "#FF0000";
-    f.context = pencil;
 }
 
 reset_f();

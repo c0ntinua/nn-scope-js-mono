@@ -93,6 +93,8 @@ function new_net(nodes_in) {
         bias : new Array(new_num_nodes).fill(0),
         rate : 0.001,
         graph_node_pos : install_structure(nodes_in),
+        color : "#FF0000",
+        context : pencil,
     }
 }
 
@@ -117,7 +119,10 @@ function forward(f,x) {
                             break;
         }
     }
-    return f.value[num_nodes-1];
+    let raw = f.value[num_nodes-1];
+    // if (raw > .95*max_y_value) return .95*max_y_value;
+    // if (raw < .95*min_y_value) return .95*min_y_value;
+    return raw;
 }
 
 function backprop(f,x) {

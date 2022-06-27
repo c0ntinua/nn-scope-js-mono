@@ -18,3 +18,4 @@ let ver_pixels_per_unit = plot_canvas.height/(max_y_value-min_y_value);
 let data_size = 10;
 let f;
 let data;
+let current_error;
